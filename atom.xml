@@ -3,25 +3,53 @@
   <title>饭团小屋</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="http://sumling.top/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2023-11-22T09:26:50.209Z</updated>
-  <id>http://example.com/</id>
+  <link href="http://sumling.top/"/>
+  <updated>2023-11-23T01:59:39.396Z</updated>
+  <id>http://sumling.top/</id>
   
   <author>
-    <name>枫叶</name>
+    <name>夏小凌</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux安装Mysql8.0</title>
+    <link href="http://sumling.top/2023/112327003.html"/>
+    <id>http://sumling.top/2023/112327003.html</id>
+    <published>2023-11-23T01:59:39.000Z</published>
+    <updated>2023-11-23T01:59:39.396Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql数据库主从配置</title>
+    <link href="http://sumling.top/2023/112317446.html"/>
+    <id>http://sumling.top/2023/112317446.html</id>
+    <published>2023-11-23T01:47:15.000Z</published>
+    <updated>2023-11-23T01:48:45.299Z</updated>
+    
+    
+    
+    
+    
+    <category term="数据库配置" scheme="http://sumling.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>我的第一篇文章</title>
-    <link href="http://example.com/2023/112262824.html"/>
-    <id>http://example.com/2023/112262824.html</id>
+    <link href="http://sumling.top/2023/112262824.html"/>
+    <id>http://sumling.top/2023/112262824.html</id>
     <published>2023-11-22T09:24:30.000Z</published>
-    <updated>2023-11-22T09:26:50.209Z</updated>
+    <updated>2023-11-22T09:27:27.431Z</updated>
     
     
       
@@ -36,14 +64,14 @@
     
     
     
-    <category term="java" scheme="http://example.com/tags/java/"/>
+    <category term="java" scheme="http://sumling.top/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2023/111016107.html"/>
-    <id>http://example.com/2023/111016107.html</id>
+    <link href="http://sumling.top/2023/111016107.html"/>
+    <id>http://sumling.top/2023/111016107.html</id>
     <published>2023-11-10T07:12:36.665Z</published>
     <updated>2023-11-22T09:16:43.780Z</updated>
     
