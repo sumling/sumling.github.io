@@ -6,7 +6,7 @@
   <link href="http://sumling.top/atom.xml" rel="self"/>
   
   <link href="http://sumling.top/"/>
-  <updated>2023-12-01T01:54:30.617Z</updated>
+  <updated>2023-12-01T07:15:37.774Z</updated>
   <id>http://sumling.top/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Mysql数据库主从配置</title>
+    <link href="http://sumling.top/2023/120117446.html"/>
+    <id>http://sumling.top/2023/120117446.html</id>
+    <published>2023-12-01T01:47:15.000Z</published>
+    <updated>2023-12-01T07:15:37.774Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;转自 &lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="数据库" scheme="http://sumling.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux安装Mysql8.0</title>
     <link href="http://sumling.top/2023/112327003.html"/>
     <id>http://sumling.top/2023/112327003.html</id>
     <published>2023-11-23T01:59:39.000Z</published>
-    <updated>2023-12-01T01:54:30.617Z</updated>
+    <updated>2023-12-01T06:37:09.403Z</updated>
     
     
       
@@ -37,21 +61,6 @@
     
     
     <category term="数据库" scheme="http://sumling.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mysql数据库主从配置</title>
-    <link href="http://sumling.top/2023/112317446.html"/>
-    <id>http://sumling.top/2023/112317446.html</id>
-    <published>2023-11-23T01:47:15.000Z</published>
-    <updated>2023-11-23T02:31:34.084Z</updated>
-    
-    
-    
-    
-    
-    <category term="数据库配置" scheme="http://sumling.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
