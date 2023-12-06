@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Linux主机磁盘扩容LVM(逻辑分区)</title>
+      <link href="/2023/120650612.html"/>
+      <url>/2023/120650612.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>转自 <a href="https://blog.csdn.net/C3399/article/details/128805712">Linux主机磁盘扩容LVM(逻辑分区)_linux逻辑卷扩容_C3399的博客-CSDN博客</a></p></blockquote><h3 id="应用场景：解决磁盘空间不足通过lvm的方式对逻辑分区扩容，达到在线扩容磁盘目录的情况"><a href="#应用场景：解决磁盘空间不足通过lvm的方式对逻辑分区扩容，达到在线扩容磁盘目录的情况" class="headerlink" title="应用场景：解决磁盘空间不足通过lvm的方式对逻辑分区扩容，达到在线扩容磁盘目录的情况"></a>应用场景：解决磁盘空间不足通过lvm的方式对逻辑分区扩容，达到在线扩容磁盘目录的情况</h3><h4 id="1、判断待扩容的分区是否是逻辑分区"><a href="#1、判断待扩容的分区是否是逻辑分区" class="headerlink" title="1、判断待扩容的分区是否是逻辑分区"></a>1、判断待扩容的分区是否是逻辑分区</h4><p>通过 <strong>lsblk</strong> 命令，判断目标分区是否是逻辑分区，<em><strong>如果TYPE为lvm则是逻辑分区，否则不是。只有逻辑分区，才能使用该方式，切记</strong></em>。</p><p><img src="/pic/f.jpg"></p><h4 id="2、将新加入主机的磁盘创建分区并加入指定虚拟卷组通过fdisk-l命令进行查看，确认新增磁盘的名称，新增磁盘为：-dev-sdb此处以一块新增的20G磁盘为例"><a href="#2、将新加入主机的磁盘创建分区并加入指定虚拟卷组通过fdisk-l命令进行查看，确认新增磁盘的名称，新增磁盘为：-dev-sdb此处以一块新增的20G磁盘为例" class="headerlink" title="2、将新加入主机的磁盘创建分区并加入指定虚拟卷组通过fdisk -l命令进行查看，确认新增磁盘的名称，新增磁盘为：&#x2F;dev&#x2F;sdb此处以一块新增的20G磁盘为例"></a>2、将新加入主机的磁盘创建分区并加入指定虚拟卷组通过fdisk -l命令进行查看，确认新增磁盘的名称，新增磁盘为：&#x2F;dev&#x2F;sdb此处以一块新增的20G磁盘为例</h4><p><img src="/pic/g.jpg"></p><h5 id="编辑-dev-sdb，依次输入下列指令"><a href="#编辑-dev-sdb，依次输入下列指令" class="headerlink" title="编辑&#x2F;dev&#x2F;sdb，依次输入下列指令"></a>编辑&#x2F;dev&#x2F;sdb，依次输入下列指令</h5><p><img src="/pic/h.png"></p><h4 id="3、确定需要扩容的目录所属逻辑卷信息"><a href="#3、确定需要扩容的目录所属逻辑卷信息" class="headerlink" title="3、确定需要扩容的目录所属逻辑卷信息"></a>3、确定需要扩容的目录所属逻辑卷信息</h4><h4 id="df-lh"><a href="#df-lh" class="headerlink" title="df -lh"></a>df -lh</h4><p><img src="/pic/i.jpg"></p><h4 id="lvdisplay"><a href="#lvdisplay" class="headerlink" title="lvdisplay"></a>lvdisplay</h4><p><img src="/pic/j.jpg"></p><h4 id="4、将新建的分区加入目标VG卷组并扩容"><a href="#4、将新建的分区加入目标VG卷组并扩容" class="headerlink" title="4、将新建的分区加入目标VG卷组并扩容"></a>4、将新建的分区加入目标VG卷组并扩容</h4><h4 id="执行-vgextend-centos-dev-sdb1-（centos为-VG-Name-dev-sdb1-为新增分区名称）-将新建分区加入目标VG卷"><a href="#执行-vgextend-centos-dev-sdb1-（centos为-VG-Name-dev-sdb1-为新增分区名称）-将新建分区加入目标VG卷" class="headerlink" title="执行   vgextend centos &#x2F;dev&#x2F;sdb1     （centos为 VG Name,&#x2F;dev&#x2F;sdb1 为新增分区名称） ,将新建分区加入目标VG卷"></a>执行   vgextend centos &#x2F;dev&#x2F;sdb1     （centos为 VG Name,&#x2F;dev&#x2F;sdb1 为新增分区名称） ,将新建分区加入目标VG卷</h4><p><img src="/pic/k.jpg"></p><h4 id="执行-lvextend-l-100-FREE-dev-mapper-centos-root-dev-mapper-centos-root为df-lh查询出的红框-，将新建分区空间加入逻辑分区"><a href="#执行-lvextend-l-100-FREE-dev-mapper-centos-root-dev-mapper-centos-root为df-lh查询出的红框-，将新建分区空间加入逻辑分区" class="headerlink" title="执行   lvextend -l +100%FREE &#x2F;dev&#x2F;mapper&#x2F;centos-root   (&#x2F;dev&#x2F;mapper&#x2F;centos-root为df -lh查询出的红框)，将新建分区空间加入逻辑分区"></a>执行   lvextend -l +100%FREE &#x2F;dev&#x2F;mapper&#x2F;centos-root   (&#x2F;dev&#x2F;mapper&#x2F;centos-root为df -lh查询出的红框)，将新建分区空间加入逻辑分区</h4><p><img src="/pic/l.jpg"></p><h4 id="执行-xfs-growfs-（我这里是根目录，所以是-如果不是根目录换为所在目录-dev-mapper-centos-root），检查并将空间进行重载"><a href="#执行-xfs-growfs-（我这里是根目录，所以是-如果不是根目录换为所在目录-dev-mapper-centos-root），检查并将空间进行重载" class="headerlink" title="执行   xfs_growfs &#x2F;      （我这里是根目录，所以是&#x2F;,如果不是根目录换为所在目录&#x2F;dev&#x2F;mapper&#x2F;centos-root），检查并将空间进行重载"></a>执行   <strong>xfs_growfs &#x2F;</strong>      （我这里是根目录，所以是&#x2F;,如果不是根目录换为所在目录&#x2F;dev&#x2F;mapper&#x2F;centos-root），检查并将空间进行重载</h4><p><img src="/pic/m.jpg"></p><h4 id="5、检查是否增加"><a href="#5、检查是否增加" class="headerlink" title="5、检查是否增加"></a>5、检查是否增加</h4><h4 id="df-lh-1"><a href="#df-lh-1" class="headerlink" title="df -lh"></a>df -lh</h4><p><img src="/pic/n.jpg"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mysql数据库主从配置</title>
       <link href="/2023/120117446.html"/>
       <url>/2023/120117446.html</url>
